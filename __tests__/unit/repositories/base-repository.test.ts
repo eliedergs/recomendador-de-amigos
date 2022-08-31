@@ -1,15 +1,15 @@
+import { BaseRepository } from '@/infrastructure/repositories/base.repository';
 import Storage from '@/infrastructure/storage';
 import { faker } from '@faker-js/faker';
 import { describe } from '@jest/globals';
 import { ITest } from '../../_fixtures/misc/test.interface,';
-import { TestRepository } from '../../_fixtures/misc/test.repository';
 
 describe('Base repository', () => {
-  let testRepository: TestRepository;
+  let testRepository: BaseRepository<ITest>;
 
   beforeAll(() => {
     Storage.initializeCache();
-    testRepository = new TestRepository();
+    testRepository = new BaseRepository<ITest>('test');
   });
 
   describe('add', () => {

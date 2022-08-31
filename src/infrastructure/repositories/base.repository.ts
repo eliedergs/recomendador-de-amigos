@@ -1,6 +1,6 @@
 import Storage from '../storage';
 
-export abstract class BaseRepository<T = {}> {
+export class BaseRepository<T = {}> {
   private _key = '';
 
   constructor(key) {
