@@ -1,34 +1,25 @@
 {
-  "compilerOptions": {
-    "target": "es2017",
-    "module": "commonjs",
-    "lib": [
-      "es6"
-    ],
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "sourceMap": true,
-    "allowJs": true,
-    "removeComments": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": false,
-    "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "rootDir": "./",
-    "outDir": "./dist",
-    "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "@test/*": [
-        "./__test__/*"
-      ]
+    "compilerOptions": {
+        "target": "es2017",
+        "module": "commonjs",
+        "lib": ["es6"],
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "sourceMap": true,
+        "allowJs": true,
+        "removeComments": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": false,
+        "skipLibCheck": true,
+        "resolveJsonModule": true,
+        "rootDir": "./",
+        "outDir": "./dist",
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./src/*"],
+            "@test/*": ["./__test__/*"]
+        }
     },
-  },
-  "include": [
-    "./src",
-    "./__tests__"
-  ]
+    "include": ["./src", "./__tests__"]
 }
