@@ -3,9 +3,13 @@ import express from 'express';
 import 'reflect-metadata';
 import { router } from './routes';
 
-const app = express();
+export const initServer = () => {
+    const app = express();
 
-app.use(express.json());
-app.use(cors());
-app.use(router);
-app.listen(3000, () => console.log('API running on port 3000'));
+    app.use(express.json());
+    app.use(cors());
+    app.use(router);
+    const server = app.listen(3000);
+
+    return { app, server };
+};
