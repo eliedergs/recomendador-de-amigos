@@ -40,6 +40,10 @@ class RelationshipService {
     );
   }
 
+  cleanAll() {
+    return this.relationshipRepository.clean();
+  }
+
   // Internals
 
   private separateByRelation(document: string, relationships: IRelationship[]) {
