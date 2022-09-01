@@ -60,6 +60,6 @@ describe('Person service', () => {
   });
 
   afterEach(() => {
-    personRepository.clear();
+    personRepository.clean();
   });
 });

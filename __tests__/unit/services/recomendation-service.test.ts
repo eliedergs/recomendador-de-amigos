@@ -43,6 +43,6 @@ describe('Recommendations service', () => {
   });
 
   afterEach(() => {
-    personRepository.clear();
+    personRepository.clean();
   });
 });

@@ -38,6 +38,6 @@ describe('Relationship service', () => {
   });
 
   afterEach(() => {
-    personRepository.clear();
+    personRepository.clean();
   });
 });

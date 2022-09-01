@@ -79,6 +79,6 @@ describe('Base repository', () => {
   });
 
   afterEach(() => {
-    testRepository.clear();
+    testRepository.clean();
   });
 });
