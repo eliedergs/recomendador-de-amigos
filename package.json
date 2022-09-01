@@ -7,7 +7,7 @@
     "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules src/server.ts",
     "clean": "rimraf coverage build tmp",
     "build": "tsc -p tsconfig.json",
-    "test": "yarn test:unit && yarn test:e2e "
+    "test": "yarn jest -i --forceExit"
   },
   "dependencies": {
     "class-transformer": "^0.5.1",
