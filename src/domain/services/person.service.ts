@@ -20,6 +20,10 @@ class PersonService {
   findPersonByDocument(document: string) {
     return this.personRepository.findOne('cpf', document);
   }
+
+  cleanAll() {
+    return this.personRepository.clean();
+  }
 }
 
 export default new PersonService();
