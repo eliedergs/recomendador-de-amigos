@@ -15,7 +15,7 @@ export default class Storage {
     return this._cache.get<T>(key);
   }
 
-  static clear(key: string) {
+  static clean(key: string) {
     return this._cache.set(key, null);
   }
 }

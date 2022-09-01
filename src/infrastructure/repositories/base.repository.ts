@@ -7,9 +7,14 @@ export class BaseRepository<T = {}> {
     this._key = key;
   }
 
-  add(data: T) {
+  add(data: T | T[]) {
     let _data = Storage.get<T[]>(this._key) || [];
-    _data = [..._data, data];
+
+    if (data instanceof Array) {
+      _data = [..._data, ...data];
+    } else {
+      _data = [..._data, data];
+    }
 
     Storage.set<T[]>(this._key, _data);
   }
@@ -34,7 +39,7 @@ export class BaseRepository<T = {}> {
     Storage.set<T[]>(this._key, _data);
   }
 
-  clear() {
+  clean() {
     Storage.set<T[]>(this._key, []);
   }
 }
