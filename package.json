@@ -6,7 +6,6 @@
     "start": "ts-node -r tsconfig-paths/register --transpile-only src/server.ts",
     "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules src/server.ts",
     "clean": "rimraf coverage build tmp",
-    "build": "tsc -p tsconfig.json",
     "test": "yarn jest -i --forceExit"
   },
   "dependencies": {
