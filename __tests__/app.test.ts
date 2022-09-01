@@ -6,20 +6,16 @@ import { Server } from 'http';
 import { initServer } from '../src/app';
 
 describe('Global: initializations', () => {
-  let _server: Server;
+  let server: Server;
 
-  it('If server are enable after app initialization', () => {
-    const { app, server } = initServer();
-    _server = server;
+  it('If server are enable after app initialization', async () => {
+    ({ server } = await initServer());
 
-    expect(app).toBeDefined();
-    supertest(_server).get('/').expect(200);
+    expect(server.listening).toBe(true);
+    supertest(server).get('/').expect(200);
   });
 
   afterAll(async () => {
-    if (_server?.listening) {
-      await _server.close();
-      _server = null;
-    }
+    if (server?.listening) await server.close();
   });
 });

@@ -1,15 +1,18 @@
 import cors from 'cors';
 import express from 'express';
 import 'reflect-metadata';
+import Storage from './infrastructure/storage';
 import { router } from './routes';
 
-export const initServer = () => {
-    const app = express();
+export const initServer = async () => {
+  const app = express();
 
-    app.use(express.json());
-    app.use(cors());
-    app.use(router);
-    const server = app.listen(3000);
+  Storage.initializeCache();
 
-    return { app, server };
+  app.use(express.json());
+  app.use(cors());
+  app.use(router);
+  const server = await app.listen(3000);
+
+  return { app, server };
 };
